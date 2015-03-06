@@ -9,7 +9,7 @@
 #define	NEWTESTCLASS_H
 
 #include <cppunit/extensions/HelperMacros.h>
-#include "../LinkedList/LinkedList.h"
+#include "LinkedList.h"
 
 class newtestclass : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(newtestclass);
