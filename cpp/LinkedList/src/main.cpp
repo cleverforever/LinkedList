@@ -31,7 +31,7 @@ int main(int, char**) {
         list->printList();
     }
 
-//    delete list;
+    delete list;
     return 0;
 }
 
