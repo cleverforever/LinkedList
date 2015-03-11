@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: yuyc
  *
- * Created on 2015年3月5日, 下午5:46
+ * Created on 2015骞�3鏈�5鏃�, 涓嬪崍5:46
  */
 
 #include <cstdlib>
@@ -15,8 +15,8 @@ using namespace std;
 int main(int, char**) {
     LinkedList<int>* list = new LinkedList<int>();
     
-    for(int i=1;i<=5;i++){
-        bool isOK = list->insertInFront(i);
+    for(int i=1;i<=10;i++){
+        bool isOK = list->insertInFront(i%5);
         if(!isOK){           
             delete list;
             return false;
@@ -24,8 +24,8 @@ int main(int, char**) {
     }
     cout<<"inserted"<<endl;
     list->printList();
-    
-    for(int j=5;j>=1;j--){
+
+    for(int j=4;j>=0;j--){
         list->delNodeInFront(j);
         cout<<"deleted"<<j<<endl;    
         list->printList();

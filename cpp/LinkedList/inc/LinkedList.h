@@ -2,7 +2,7 @@
  * File:   LinkedList.h
  * Author: yuyc
  *
- * Created on 2015年2月11日, 下午11:08
+ * Created on 2015骞�2鏈�11鏃�, 涓嬪崍11:08
  */
 
 #ifndef LINKEDLIST_H
@@ -41,31 +41,30 @@ public:
         return true;
     }
 
-    bool delNodeInFront(const T& data){
-        ListElement<T> *pCur = this->getHead(), *pNext = NULL;
-        bool isOK = false;
-        if(!pCur) return isOK;
-        pNext = pCur->getNext();
-         //The head will be deleted
-        if(pCur->getValue() == data){
-            this->setHead( pNext );
-            delete pCur;
-            pCur = pNext;
-            isOK = true;
+    void delNodeInFront(const T& data){
+        ListElement<T> *pCur=NULL, *pNext=NULL;
+        pCur=pNext=this->getHead();
+
+        while(pNext){
+        	if( pNext->getValue() == data ){
+        		if( pNext == this->getHead() ){
+        			pCur = pNext->getNext();
+        			this->setHead(pCur);
+        			delete pNext;
+        			pNext = pCur;
+        			continue;
+        		}
+        		else{
+    				pCur->setNext(pNext->getNext());
+        			delete pNext;
+        			pNext = pCur->getNext();
+        		}
+        	}
+        	else{
+        		pCur = pNext;
+        		pNext = pNext->getNext();
+        	}
         }
-    
-        while(pNext){            
-            if(pNext->getValue() == data){
-                pCur->setNext(pNext->getNext());
-                delete pNext;
-                isOK = true;
-            }
-            else {
-                pCur = pNext;
-            }
-            pNext = pCur->getNext();
-        }
-        return isOK;
     }
     
     void printList() const{

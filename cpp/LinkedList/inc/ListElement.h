@@ -3,7 +3,7 @@
  * File:   LinkedElement.h
  * Author: yuyc
  *
- * Created on 2015年2月12日, 上午11:56
+ * Created on 2015骞�2鏈�12鏃�, 涓婂崍11:56
  */
 
 #ifndef LINKEDELEMENT_H
@@ -25,7 +25,7 @@ private:
     ListElement* _next;
     T _data;
 
-    ListElement(const ListElement& orig){}
+    ListElement(const ListElement& orig):_next(NULL){}
 };
 
 #endif	/* LINKEDELEMENT_H */
